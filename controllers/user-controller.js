@@ -78,7 +78,7 @@ module.exports = {
                status: false,
                message: 'Email cannot be empty & should be valid format'
             });
-      } else if (password && password.length <= 4) {
+      } else if (password) {
          User.findOne({
             email
          }, (err, user) => {
@@ -129,7 +129,7 @@ module.exports = {
       } else {
          return res.status(400).json({
             status: false,
-            message: "Password cannot be empty or send valid format"
+            message: "Password is required"
          });
       }
 	}
